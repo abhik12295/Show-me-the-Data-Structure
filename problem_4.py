@@ -54,3 +54,12 @@ print(is_user_in_group(sub_child_user, child))
 # Should return True
 print(is_user_in_group(sub_child_user, parent))
 # Should return "True
+
+
+#Edge Cases
+#user not found in the group = parent
+print(is_user_in_group('', parent))
+# False
+#user not found in the group child
+print(is_user_in_group('', child))
+#False
