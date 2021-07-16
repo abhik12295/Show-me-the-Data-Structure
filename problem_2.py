@@ -45,3 +45,7 @@ print("Pass" if find_files(".c","./testdir/t1.c") == ["./testdir/t1.c"] else "Fa
 print("Pass" if find_files(".c","./testdir/subdir3/subsubdir1/b.c") == ["./testdir/subdir3/subsubdir1/b.c"] else "Fail")
 print("Pass" if find_files(".c","") == [] else "Fail") #edge case when path is not provided
 print("Pass" if find_files(".c","./testdir/subdir2") == [] else "Fail")
+#edges cases
+print("Pass" if find_files('.c', './testdir') == [] else "Fail") # []
+print("Pass" if find_files('.h','./testdir') == [] else "Fail")  #[] empty as no file found in directory
+print("Pass" if find_files('.h','./testdir/subdir3/') == [] else "Fail")  #[] empty as no file found in directory
