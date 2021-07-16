@@ -53,31 +53,37 @@ class LinkedList:
         return size
 
 b1 = LinkedList()
-b1.append('my first blockchain')
+b1.append('first blockchain')
 b1.append('second blockchain')
 b1.append('third blockchain')
 b1.append('forth blockchain')
 print(b1)
 
-# Test 2: empty blocks
+# Test 1: empty blocks
 b2 = LinkedList()
 try:
     b2.append() #raise error when trying to create a block with no data
 except TypeError:
-    print("Data is a required input to the block")
+    print("\nData is a required input to the block\n")
 
-# Test 3: intput data has to be integer type
+# Test 2: intput data has to be integer type
 b3 = LinkedList()
 b3.append(1)
 
+#Test 3 : with same timestamp
+b4 = LinkedList()
+b4.append('Same timestamp')
+print(b4)
+#output
+#Fri, 16 Jul 2021 08:34:40 PM Central Standard Time,Same timestamp
+
 '''
-Output
-|Thu, 15 Jul 2021 09:40:20 PM Central Standard Time,
-my first blockchain,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10,0| <- 
-|Thu, 15 Jul 2021 09:40:20 PM Central Standard Time,
-second blockchain,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10| <- 
-|Thu, 15 Jul 2021 09:40:20 PM Central Standard Time,
-third blockchain,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10| <- 
-|Thu, 15 Jul 2021 09:40:20 PM Central Standard Time,forth blockchain,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10| <- 
-Data is a required input to the block
+|Fri, 16 Jul 2021 08:34:40 PM Central Standard Time,first blockchain,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10,0| 
+<- |Fri, 16 Jul 2021 08:34:40 PM Central Standard Time,second blockchain,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10| 
+<- |Fri, 16 Jul 2021 08:34:40 PM Central Standard Time,third blockchain,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10| 
+<- |Fri, 16 Jul 2021 08:34:40 PM Central Standard Time,forth blockchain,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10| 
+<- Data is a required input to the block
+
+|Fri, 16 Jul 2021 08:34:40 PM Central Standard Time,Same timestamp,a20200a94c75010576e2d6a83e6fa69271901a9d805894b28bd91e6054fbfd10,0| 
+<- 
 '''
