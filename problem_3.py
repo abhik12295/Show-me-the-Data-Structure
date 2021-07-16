@@ -47,19 +47,105 @@ if __name__ == "__main__":
     print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
     print ("The content of the encoded data is: {}\n".format(decoded_data))
 
+    '''
+    Output:
+    The size of the data is: 69
 
+    The content of the data is: The bird is the word
+
+    The size of the encoded data is: 48
+
+    The content of the encoded data is: 100000010000000100000000000101000000001000000000100000000001000000000001000000001001000000000001000100000010000000100000000000100001000001000000000100000000001
+
+    The size of the decoded data is: 69
+
+    The content of the encoded data is: The bird is the word
+
+    '''
+# Case: If repetitive strings
+
+    codes = {}
+
+    a_great_sentence = "aaaaaa"
+
+    print("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
+    print("The content of the data is: {}\n".format(a_great_sentence))
+
+    encoded_data, tree = huffman_encoding(a_great_sentence)
+
+    print("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+    print("The content of the encoded data is: {}\n".format(encoded_data))
+
+    decoded_data = huffman_decoding(encoded_data, tree)
+
+    print("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    print("The content of the encoded data is: {}\n".format(decoded_data))
+
+    '''
+    The size of the data is: 55
+
+    The content of the data is: aaaaaa
+
+    The size of the encoded data is: 28
+
+    The content of the encoded data is: 111111
+
+    The size of the decoded data is: 55
+
+    The content of the encoded data is: aaaaaa
+    '''
+
+    # edge case - If string is empty then shows error
+    codes = {}
+
+    a_great_sentence = ""
+
+    print("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
+    print("The content of the data is: {}\n".format(a_great_sentence))
+
+    encoded_data, tree = huffman_encoding(a_great_sentence)
+
+    print("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+    print("The content of the encoded data is: {}\n".format(encoded_data))
+
+    decoded_data = huffman_decoding(encoded_data, tree)
+
+    print("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    print("The content of the encoded data is: {}\n".format(decoded_data))
+    '''
+    The size of the data is: 51
+
+    The content of the data is: 
+    invalid literal for int() with base 2: ''
+    '''
+    # edge case - If string has just one space but still empty
+    codes = {}
+
+    a_great_sentence = " "
+
+    print("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
+    print("The content of the data is: {}\n".format(a_great_sentence))
+
+    encoded_data, tree = huffman_encoding(a_great_sentence)
+
+    print("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+    print("The content of the encoded data is: {}\n".format(encoded_data))
+
+    decoded_data = huffman_decoding(encoded_data, tree)
+
+    print("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    print("The content of the encoded data is: {}\n".format(decoded_data))
 '''
-Output:
-The size of the data is: 69
+The size of the data is: 50
 
-The content of the data is: The bird is the word
+The content of the data is:  
 
-The size of the encoded data is: 48
+The size of the encoded data is: 28
 
-The content of the encoded data is: 100000010000000100000000000101000000001000000000100000000001000000000001000000001001000000000001000100000010000000100000000000100001000001000000000100000000001
+The content of the encoded data is: 1
 
-The size of the decoded data is: 69
+The size of the decoded data is: 50
 
-The content of the encoded data is: The bird is the word
+The content of the encoded data is:  
 
 '''
