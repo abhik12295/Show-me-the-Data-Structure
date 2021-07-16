@@ -97,9 +97,9 @@ def intersection(llist_1, llist_2):
         temp_list = set_1.intersection(set_2)
         if len(temp_list) == 0:
             return None
-    for item in temp_list:
-        res.append(item)
-    return res
+        for item in temp_list:
+            res.append(item)
+        return res
 
 
 # Test case 1
@@ -133,20 +133,76 @@ for i in element_1:
 
 for i in element_2:
     linked_list_4.append(i)
+
 print("\nTest case 2\n")
 print("Union\t\t", union(linked_list_3, linked_list_4))
 print("Intersection\t\t", intersection(linked_list_3, linked_list_4))
 
-'''
+# Test case 3
+# first list is empty
 
+linked_list_5 = LinkedList()
+linked_list_6 = LinkedList()
+
+element_1 = []
+element_2 = [1, 7, 8, 9, 11, 21, 6]
+
+for i in element_1:
+    linked_list_5.append(i)
+
+for i in element_2:
+    linked_list_6.append(i)
+
+print("\nTest case 3\n")
+print("Union\t\t", union(linked_list_5, linked_list_6))
+print("Intersection\t\t", intersection(linked_list_5, linked_list_6))
+
+# Output
+# Union		 1 -> 21 -> 6 -> 7 -> 8 -> 9 -> 11 ->
+# Intersection		 None
+
+
+# Test case 4
+# Both list is empty
+
+linked_list_7 = LinkedList()
+linked_list_8 = LinkedList()
+
+element_1 = []
+element_2 = []
+if element_1 and element_2 is None:
+    print([])
+else:
+    for i in element_1:
+        linked_list_7.append(i)
+
+    for i in element_2:
+        linked_list_8.append(i)
+
+print("\nTest case 4\n")
+print("Union\t\t", union(linked_list_7, linked_list_8))
+print("Intersection\t\t", intersection(linked_list_7, linked_list_8))
+# Print None
+
+
+'''
 Test case 1
 
 Union		 32 -> 65 -> 2 -> 35 -> 3 -> 4 -> 6 -> 1 -> 9 -> 11 -> 21 -> 
-Intersection	 4 -> 21 -> 6 -> 
+Intersection	 6 -> 
 
 Test case 2
 
 Union		 65 -> 2 -> 35 -> 3 -> 4 -> 6 -> 1 -> 7 -> 8 -> 9 -> 11 -> 21 -> 23 -> 
 Intersection		 None
 
+Test case 3
+
+Union		 1 -> 21 -> 6 -> 7 -> 8 -> 9 -> 11 -> 
+Intersection		 None
+
+Test case 4
+
+Union		 
+Intersection		 None
 '''
