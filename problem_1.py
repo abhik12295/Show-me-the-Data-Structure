@@ -92,3 +92,16 @@ our_cache.get(9)      # returns -1 because 9 is not present in the cache
 our_cache.set(5, 5)
 our_cache.set(6, 6)
 our_cache.get(3) # returns -1 because the cache reached it's capacity and 3 was the least recently used entry
+
+#new edge cases
+our_cache = LRU_Cache(0)
+our_cache.set(1, 1)
+# Error occur, and can show message using try that "Can't perform cache operations on 0 capacity"
+
+print(our_cache.get(1))
+# should return -1
+
+our_cache = LRU_Cache(-1)
+our_cache.set(1, 1)
+print(our_cache.get(1))
+#should return 1
